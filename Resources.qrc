@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>img/system-shutdown-symbolic.svg</file>
+    </qresource>
+</RCC>
