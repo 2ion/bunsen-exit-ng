@@ -15,7 +15,7 @@ install-bunsen-exit-ng: bunsen-exit-ng
 	install -m 0755 -D $< $(PREFIX)/bunsen-exit-ng
 
 install-dmenuv: dmenuv
-	install -m 0755 -D $< $(PREFIX)/dmenuv
+	install -m 0755 -D dmenu-v/dmenu $(PREFIX)/dmenuv
 
 dmenuv:
 	git submodule init
