@@ -10,7 +10,7 @@ Clone the repository:
 
 Install dmenu-v, bunsen-exit-ng and the exitrc configuration file:
 
-  make install-dmenuv install-bunsen-exit-ng PREFIX=/usr/local/bin
+  make install-dmenuv install-bunsen-exit-ng PREFIX=/usr/local
   make install-exitrc # goes into your home directory
 
 1. CONFIGURATION

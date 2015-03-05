@@ -1,5 +1,5 @@
 EXITRC = $(HOME)/.exitrc
-PREFIX ?= /usr/local/bin
+PREFIX ?= /usr/local
 .PHONY: install-exitrc install-dmenuv install-bunsen-exit-ng
 
 all: 
@@ -12,10 +12,10 @@ install-exitrc: exitrc
 	install -b -m 0600 $< $(EXITRC)
 
 install-bunsen-exit-ng: bunsen-exit-ng
-	install -m 0755 -D $< $(PREFIX)/bunsen-exit-ng
+	install -m 0755 -D $< $(PREFIX)/bin/bunsen-exit-ng
 
 install-dmenuv: dmenuv
-	install -m 0755 -D dmenu-v/dmenu $(PREFIX)/dmenuv
+	install -m 0755 -D dmenu-v/dmenu $(PREFIX)/bin/dmenuv
 
 dmenuv:
 	git submodule init
