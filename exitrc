@@ -1,4 +1,5 @@
 # bunsen-exit-ng configuration
+# https://github.com/2ion/bunsen-exit-ng/tree/dmenuv
 
 #######################################################################
 # MENU ENTRIES
@@ -19,7 +20,7 @@ COMMANDS[Power off]="gksudo poweroff"
 DMENU_FONT="-*-tamsyn-bold-*-*-*-20-*-*-*-*-*-*-*"
 
 #######################################################################
-# Bar position
+# BAR POSITION
 # One of: -q (top quarter), -m (middle), -b (bottom)
 # Comment out for top position
 #######################################################################
@@ -27,7 +28,7 @@ DMENU_FONT="-*-tamsyn-bold-*-*-*-20-*-*-*-*-*-*-*"
 POSITION=-m
 
 #######################################################################
-# DMENU binary
+# DMENU BINARY
 # A dmenu binary with the -q and -m patches
 #######################################################################
 
