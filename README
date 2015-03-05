@@ -1,0 +1,24 @@
++-----------------------------------------+
+| bunsen-exit-ng - a suckless exit dialog |
++-----------------------------------------+
+
+0. INSTALLATION
+
+Clone the repository:
+
+  git clone --branch dmenuv --single-branch https://github.com/2ion/bunsen-exit-ng.git
+
+Install dmenu-v, bunsen-exit-ng and the exitrc configuration file:
+
+  make install-dmenuv install-bunsen-exit-ng PREFIX=/usr/local/bin
+  make install-exitrc # goes into your home directory
+
+1. CONFIGURATION
+
+Configure the commands, font, bar position and other stuff in ~/.exitrc.
+
+Use xselfont for obtaining a X11 font specification.
+
+Now you can run bunsen-exit-ng.
+
+

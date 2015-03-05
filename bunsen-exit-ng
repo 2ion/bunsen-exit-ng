@@ -3,20 +3,44 @@
 set -e
 set -f
 
-readonly DMENU_FONT="-*-tamsyn-bold-*-*-*-20-*-*-*-*-*-*-*"
-declare -A COMMANDS
-declare INPUT
+readonly USERCONFIG="$HOME/.exitrc"
 
-COMMANDS[Lock]="xscreensaver-command -lock"
-COMMANDS[Suspend]="gksudo xmessage foo"
-COMMANDS[Hibernate]="gksudo xmessage hello"
-COMMANDS[Log out]="pkill dwm"
-COMMANDS[Reboot]="sudo rebot"
-COMMANDS[Power off]="sudo pweroff"
+declare -A COMMANDS
+DMENUV=dmenu
+DMENU_FONT="-*-tamsyn-bold-*-*-*-20-*-*-*-*-*-*-*"
+POSITION=-q
+
+#######################################################################
+# CONFIGURATION FILE
+# * either ~/.exitrc or ./exitrc
+# * populates COMMANDS[]
+# * optionally sets DMENU_FONT
+# * optionally sets POSITION
+# * optionally sets DMENUV (dmenu with -m and -q patches)
+#######################################################################
+
+if [[ -r "$HOME/.exitrc" ]] ; then
+  . "$USERCONFIG"
+elif [[ -r "$PWD/exitrc" ]] ; then
+  . "$PWD/exitrc"
+fi
+
+#######################################################################
+# CLI - OVERRIDES USERCONFIG
+#######################################################################
+
+case "$1" in
+  Top)        POSITION=                                 ;;
+  TopQuarter) POSITION=-q                               ;;
+  Middle)     POSITION=-m                               ;;
+  Bottom)     POSITION=-b                               ;;
+esac
+
+#######################################################################
 
 INPUT=$(for key in "${!COMMANDS[@]}" ; do
   echo "$key"
-done | ./dmenu-v/dmenu -m -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
+done | "$DMENUV" $POSITION -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
 
 if [[ -n "${COMMANDS[$INPUT]}" ]] ; then
   exec ${COMMANDS[$INPUT]}
