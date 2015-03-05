@@ -1,0 +1,35 @@
+# bunsen-exit-ng configuration
+
+#######################################################################
+# MENU ENTRIES
+# Format: COMMANDS[<menu label>]="<command line>"
+#######################################################################
+
+COMMANDS[Lock]="xscreensaver-command -lock"
+COMMANDS[Suspend]="gksudo pm-suspend"
+COMMANDS[Hibernate]="gksudo pm-hibernate"
+COMMANDS[Log out]="pkill dwm"
+COMMANDS[Reboot]="sudo reboot"
+COMMANDS[Power off]="gksudo poweroff"
+
+#######################################################################
+# DISPLAY FONT
+#######################################################################
+
+DMENU_FONT="-*-tamsyn-bold-*-*-*-20-*-*-*-*-*-*-*"
+
+#######################################################################
+# Bar position
+# One of: -q (top quarter), -m (middle), -b (bottom)
+# Comment out for top position
+#######################################################################
+
+POSITION=-m
+
+#######################################################################
+# DMENU binary
+# A dmenu binary with the -q and -m patches
+#######################################################################
+
+DMENUV=./dmenu-v/dmenu
+
