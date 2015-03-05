@@ -43,7 +43,7 @@ INPUT=$(for key in "${!COMMANDS[@]}" ; do
 done | "$DMENUV" $POSITION -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
 
 if [[ -n "${COMMANDS[$INPUT]}" ]] ; then
-  exec ${COMMANDS[$INPUT]}
+  ${COMMANDS[$INPUT]}
 fi
 
-exit 0
+exit $?
