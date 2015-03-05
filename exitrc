@@ -9,7 +9,7 @@ COMMANDS[Lock]="xscreensaver-command -lock"
 COMMANDS[Suspend]="gksudo pm-suspend"
 COMMANDS[Hibernate]="gksudo pm-hibernate"
 COMMANDS[Log out]="pkill dwm"
-COMMANDS[Reboot]="sudo reboot"
+COMMANDS[Reboot]="gksudo reboot"
 COMMANDS[Power off]="gksudo poweroff"
 
 #######################################################################
