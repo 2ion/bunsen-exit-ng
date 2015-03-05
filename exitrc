@@ -31,5 +31,5 @@ POSITION=-m
 # A dmenu binary with the -q and -m patches
 #######################################################################
 
-DMENUV=./dmenu-v/dmenu
+DMENUV=dmenuv
 
