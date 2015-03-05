@@ -19,5 +19,5 @@ install-dmenuv: dmenuv
 
 dmenuv:
 	git submodule init
-	git submodule foreach git pull origin master
+	git submodule update
 	make -C dmenu-v
