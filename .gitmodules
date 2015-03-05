@@ -1,0 +1,3 @@
+[submodule "dmenu-v"]
+	path = dmenu-v
+	url = https://github.com/2ion/dmenu-v.git
