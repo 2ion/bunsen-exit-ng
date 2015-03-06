@@ -39,7 +39,7 @@ WIDTH=1.0
 if [[ -r "$HOME/.exitrc" ]] ; then
   . "$USERCONFIG"
 elif [[ -r "$PWD/exitrc" ]] ; then
-  . "$PWD/exitrc"
+  . "/etc/exitrc"
 fi
 
 #######################################################################
