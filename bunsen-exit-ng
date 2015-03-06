@@ -43,17 +43,6 @@ elif [[ -r "$PWD/exitrc" ]] ; then
 fi
 
 #######################################################################
-# CLI - OVERRIDES USERCONFIG
-#######################################################################
-
-case "$1" in
-  Top)        POSITION=                                 ;;
-  TopQuarter) POSITION=-q                               ;;
-  Middle)     POSITION=-m                               ;;
-  Bottom)     POSITION=-b                               ;;
-esac
-
-#######################################################################
 
 INPUT=$(for key in "${!COMMANDS[@]}" ; do
   echo "$key"
