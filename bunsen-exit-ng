@@ -36,7 +36,7 @@ WIDTH=1.0
 # * optionally sets DMENUV (dmenu with -m and -q patches)
 #######################################################################
 
-if [[ -r "$HOME/.exitrc" ]] ; then
+if [[ -r "$USERCONFIG" ]] ; then
   . "$USERCONFIG"
 elif [[ -r "$PWD/exitrc" ]] ; then
   . "/etc/exitrc"
