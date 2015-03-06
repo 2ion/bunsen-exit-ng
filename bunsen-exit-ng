@@ -24,7 +24,7 @@ readonly USERCONFIG="$HOME/.exitrc"
 declare -A COMMANDS
 DMENUV=dmenu
 DMENU_FONT="-*-tamsyn-bold-*-*-*-20-*-*-*-*-*-*-*"
-POSITION=-q
+POSITION=tl
 WIDTH=1.0
 
 #######################################################################
@@ -57,7 +57,7 @@ esac
 
 INPUT=$(for key in "${!COMMANDS[@]}" ; do
   echo "$key"
-done | "$DMENUV" $POSITION -w "$WIDTH" -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
+done | "$DMENUV" -g "$POSITION" -w "$WIDTH" -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
 
 if [[ -n "${COMMANDS[$INPUT]}" ]] ; then
   ${COMMANDS[$INPUT]}

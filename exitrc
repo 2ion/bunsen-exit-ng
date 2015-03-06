@@ -21,11 +21,14 @@ DMENU_FONT="-*-fixed-*-*-*-*-20-*-*-*-*-*-iso10646-*"
 
 #######################################################################
 # BAR POSITION
-# One of: -q (top quarter), -m (middle), -b (bottom)
-# Comment out for top position
+# Format: <vertical position><horizontal position>
+# <vertical position>: one of t (top), T (top quarter), m (middle),
+#                      B (bottom quarter), b (bottom)
+# <horizontal position>: one of l (left), c (center), r (right)
+# Examples: tc, tl, Br
 #######################################################################
 
-POSITION=-m
+POSITION=Tc
 
 #######################################################################
 # DMENU BINARY
