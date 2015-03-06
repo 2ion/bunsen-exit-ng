@@ -34,3 +34,10 @@ POSITION=-m
 
 DMENUV=dmenuv
 
+#######################################################################
+# MENU WIDTH
+# Limit the menu width to a fraction of the screen size
+# Floating point number 0.0 < x <= 1.0
+#######################################################################
+
+WIDTH=1.0
