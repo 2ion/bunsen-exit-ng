@@ -31,8 +31,8 @@ DMENU_FONT="-*-fixed-*-*-*-*-20-*-*-*-*-*-iso10646-*"
 POSITION=Tc
 
 #######################################################################
-# DMENU BINARY
-# A dmenu binary with the -q and -m patches
+# DMENUV BINARY
+# in $PATH if not absolute
 #######################################################################
 
 DMENUV=dmenuv
