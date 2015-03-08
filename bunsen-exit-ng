@@ -19,6 +19,7 @@
 set -e
 set -f
 
+readonly SCRIPT=${0##*/}
 readonly USERCONFIG="$HOME/.exitrc"
 readonly SYSTEMCONFIG="/etc/exitrc"
 
@@ -27,6 +28,10 @@ DMENUV=dmenuv
 DMENU_FONT="-*-fixed-*-*-*-*-20-*-*-*-*-*-iso10646-*"
 POSITION=tl
 WIDTH=1.0
+
+test_for_dmenuv () {
+  [[ "$("$DMENUV" -v | cut -d, -f1)" =~ V$ ]] && return 0 || return 1
+}
 
 #######################################################################
 # CONFIGURATION FILE
@@ -43,11 +48,21 @@ elif [[ -r "$SYSTEMCONFIG" ]] ; then
   . "$SYSTEMCONFIG"
 fi
 
+POSITION="-g $POSITION"
+WIDTH="-w $WIDTH"
+
 #######################################################################
+
+if ! test_for_dmenuv ; then
+  echo "$SCRIPT: the binary pointed to by the DMENUV config option doesn't include the dmenu-v patchset" >&2
+  echo "$SCRIPT: using fall-back options: ignoring gravity and width parameters"
+  POSITION=
+  WIDTH=
+fi
 
 INPUT=$(for key in "${!COMMANDS[@]}" ; do
   echo "$key"
-done | "$DMENUV" -g "$POSITION" -w "$WIDTH" -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
+done | "$DMENUV" $POSITION $WIDTH -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
 
 if [[ -n "${COMMANDS[$INPUT]}" ]] ; then
   ${COMMANDS[$INPUT]}
