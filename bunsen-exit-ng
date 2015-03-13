@@ -62,7 +62,7 @@ fi
 
 INPUT=$(for key in "${!COMMANDS[@]}" ; do
   echo "$key"
-done | "$DMENUV" $POSITION $WIDTH -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
+done | sort | "$DMENUV" $POSITION $WIDTH -l "${#COMMANDS[@]}" -fn "$DMENU_FONT")
 
 if [[ -n "${COMMANDS[$INPUT]}" ]] ; then
   ${COMMANDS[$INPUT]}
