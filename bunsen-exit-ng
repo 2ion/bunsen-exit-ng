@@ -20,8 +20,8 @@ set -e
 set -f
 
 readonly SCRIPT=${0##*/}
-readonly USERCONFIG="$HOME/.exitrc"
 readonly SYSTEMCONFIG="/etc/exitrc"
+USERCONFIG="$HOME/.exitrc"
 
 declare -A COMMANDS
 DMENUV=dmenuv
@@ -32,6 +32,15 @@ WIDTH=1.0
 test_for_dmenuv () {
   [[ "$("$DMENUV" -v | cut -d, -f1)" =~ V$ ]] && return 0 || return 1
 }
+
+if [[ $1 = -h ]] ; then
+  echo "Usage: ${0##*/} [-h] path-to-exitrc" >&2
+  exit 0
+fi
+
+if [[ -r $1 ]] ; then
+  USERCONFIG=$1
+fi
 
 #######################################################################
 # CONFIGURATION FILE
