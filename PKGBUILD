@@ -1,7 +1,7 @@
 # Maintainer: Jens John <dev@2ion.de>
 pkgname=bunsen-exit-ng-git
 pkgver=r21.d42a606
-pkgrel=1
+pkgrel=2
 pkgdesc="Configurable selection menu based on dmenuv"
 arch=('any')
 url="https://github.com/2ion/bunsen-exit-ng"
