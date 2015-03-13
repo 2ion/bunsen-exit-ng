@@ -4,14 +4,20 @@
 
 0. INSTALLATION
 
+Install the prerequisites:
+
+  * dmenuv (see https://github.com/2ion/dmenu-v)
+  * GNU coreutils
+  * bash
+
 Clone the repository:
 
   git clone --branch dmenuv --single-branch https://github.com/2ion/bunsen-exit-ng.git
 
 Install dmenu-v, bunsen-exit-ng and the exitrc configuration file:
 
-  make install-dmenuv install-bunsen-exit-ng PREFIX=/usr/local
-  make install-exitrc # goes into your home directory
+  make install PREFIX=/usr/local
+  make install-exitrc EXITRC=$HOME/.exitrc # goes into your home directory
 
 1. CONFIGURATION
 
