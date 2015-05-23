@@ -26,6 +26,7 @@ check() {
 package() {
   cd "$srcdir/${pkgname%-git}"
   install -Dm755 bunsen-exit-ng "${pkgdir}/usr/bin/bunsen-exit-ng"
+  install -Dm755 dmenuv_run "${pkgdir}/usr/bin/dmenuv_run"
   install -Dm644 exitrc "${pkgdir}/usr/share/doc/bunsen-exit-ng/exitrc.example"
   install -Dm644 README "${pkgdir}/usr/share/doc/bunsen-exit-ng/README"
 }
